@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LaboumController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get("/laboum/create", [LaboumController::class, "create"])->name("laboum.create");
+Route::post("/laboum/store", [LaboumController::class, "store"])->name("laboum.store");
+
+Route::get('/laboum', [LaboumController::class, "index"])->name("laboum.index");
+Route::get('/laboum/{laboum}', [LaboumController::class, "show"])->name("laboum.show");
+
