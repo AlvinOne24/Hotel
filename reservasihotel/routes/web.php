@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LaboumController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,4 +22,3 @@ Route::post("/laboum/store", [LaboumController::class, "store"])->name("laboum.s
 
 Route::get('/laboum', [LaboumController::class, "index"])->name("laboum.index");
 Route::get('/laboum/{laboum}', [LaboumController::class, "show"])->name("laboum.show");
-
