@@ -29,8 +29,12 @@ class LaboumController extends Controller
         // dump($request);
         // echo $request->nama;
         $validateData = $request->validate(
-            ['nama' => 'required|min:3|max:30', 'nik' => 'required|min:3|max:30','alamat' => 'required|min:3|max:30',
-            'nohp' => 'required|min:3|max:30','jeniskamar' => 'required|min:3|max:30','harga' => 'required|min:3|max:30']
+            ['nama' => 'required', 
+            'nik' => 'required',
+            'alamat' => 'required',
+            'nohp' => 'required',
+            'jeniskamar' => 'required',
+            'harga' => 'required']
         );
         
         // dump($validateData);
