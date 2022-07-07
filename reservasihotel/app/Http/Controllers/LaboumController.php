@@ -14,6 +14,16 @@ class LaboumController extends Controller
         return view("laboum.index")->with('laboums', $laboums);
     }
 
+    public function info()
+    {
+        return view("laboum.info");
+    }
+
+    public function welcome()
+    {
+        return view("laboum.welcome");
+    }
+
     public function show(Laboum $laboum)
     {
         return view("laboum.show",['laboum' => $laboum]);
@@ -22,6 +32,24 @@ class LaboumController extends Controller
 
     public function create(){
         return view("laboum.create");
+    }
+
+    public function create2(){
+        return view("laboum.create2");
+    }
+
+    public function create3(){
+        return view("laboum.create3");
+    }
+
+    public function create4(){
+        return view("laboum.create4");
+    }
+    public function create5(){
+        return view("laboum.create5");
+    }
+    public function create6(){
+        return view("laboum.create6");
     }
 
     public function store(Request $request)

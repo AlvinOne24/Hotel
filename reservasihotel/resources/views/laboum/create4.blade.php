@@ -70,15 +70,15 @@ body{
                     </div>
                     <div class="form-group">
                     <label for="nanohpma">Jenis Kamar</label></br>
-                    <input type="checkbox" name="jeniskamar" value="Standard Room">
-                    <label for="jeniskamar">Standard Room</label>
+                    <input type="checkbox" name="jeniskamar" value="Junior Suite Room">
+                    <label for="jeniskamar">Junior Suite Room</label>
                     </div>
                     <br>
                     <br>
                     <div class="form-group">
                     <label for="nanohpma">Harga</label></br>
-                    <input type="checkbox" name="harga" value="700000">
-                    <label for="harga">Rp700.000,00</label>
+                    <input type="checkbox" name="harga" value="1500000">
+                    <label for="harga">Rp1.500.000,00</label>
                     </div>
                     <br>
                     @error('nama')

@@ -2,6 +2,7 @@
 @section("title","Halaman List Pelanggan");
 
 @section("content")
+
 <div class="row pt-4">
         <div class="col">
             <h2>Profil Pelanggan {{ $laboum->nama}}</h2>
