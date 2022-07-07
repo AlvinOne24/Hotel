@@ -22,3 +22,5 @@ Route::post("/laboum/store", [LaboumController::class, "store"])->name("laboum.s
 
 Route::get('/laboum', [LaboumController::class, "index"])->name("laboum.index");
 Route::get('/laboum/{laboum}', [LaboumController::class, "show"])->name("laboum.show");
+
+Route::delete('/laboum/{laboum}', [LaboumController::class, 'destroy'])->name('laboum.destroy');

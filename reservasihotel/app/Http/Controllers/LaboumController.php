@@ -52,4 +52,11 @@ class LaboumController extends Controller
         $request->session()->flash("info","Data Pelanggan $laboum->nama berhasil disimpan");
         return redirect()->route("laboum.create");
     }
+
+    public function destroy(Laboum $laboum)
+    {
+        $laboum->delete();
+        return redirect()->route('laboum.index')
+            ->with('info', "Data $laboum->nama berhasil dihapus.");
+    }
 }
