@@ -29,12 +29,19 @@ body{
 <body>
 <nav>
         <ul>
-            <a href="/wlcome"><li>Home</li></a>
+            <a href="/welcome"><li>Home</li></a>
         </ul>
     </nav>
 <div class="row pt-4">
         <div class="col">
             <h2>List Pelanggan</h2>
+            
+            @if (session()->has('info'))
+                    <div class="alert alert-success">
+                        {{ session()->get('info') }}
+                    </div>
+            @endif
+            
             <div class="d-md-flex justify-content-md-end">
             <a href="{{ route('laboum.info')}}" class="btn btn-primary mt-2">Tambah</a>
             </div>
@@ -48,14 +55,15 @@ body{
                 <tbody>
                     @foreach ($laboums as $item)
                         <tr>
-                        <td>{{ $item->nama }}</td>
+                            <td>{{ $item->nama }}</td>
                             <td>
-                                <a href="{{ url('/laboum/'.$item->id) }}" class="btn btn-warning">Detail</a>
-                                <a href="{{ url('/absen/'.$item->id.'/edit') }}" class="btn btn-info">Ubah</a>
-                                @method('DELETE')
-                                @csrf
-                                <button type="submit" class="btn btn-danger" >Hapus</button>
-                            </form>
+                                <form action="{{ route('laboum.destroy', ['laboum' => $item->id]) }}" method="POST">
+                                    <a href="{{ url('/laboum/'.$item->id) }}" class="btn btn-warning">Detail</a>
+                                    <a href="{{ url('/laboum/'.$item->id.'/edit') }}" class="btn btn-info">Update</a>
+                                    @method('DELETE')
+                                    @csrf
+                                    <button type="submit" class="btn btn-danger" >Delete</button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach

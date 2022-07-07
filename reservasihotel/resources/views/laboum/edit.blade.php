@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Check In</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+@extends('layout.master')
+@section("title","Halaman List Pelanggan");
 
-</head>
+@section("content")
 <style>
     nav{
     background-color: grey;
@@ -44,51 +38,53 @@ body{
 <div class="container">
         <div class="row pt-4">
             <div claa="col">
-                <h2>Form Checkin</h2>
+                <h2>Form Edit Checkin</h2>
                 @if (session()->has('info'))
                     <div class="alert alert-success">
                         {{ session()->get('info') }}
                     </div>
                 @endif
-                <form action="{{ url('laboum/store') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('laboum.update', ['laboum' => $laboum->id]) }}" method="post">
+                    @method('PATCH')
                     @csrf
                     <div class="form-group">
                         <label for="nama">Masukkan Nama</label>
-                        <input type="text" name="nama" class="form-control">
+                        <input type="text" name="nama" class="form-control" value="{{ old('nama') ?? $laboum->nama }}">
                     </div>
                     <div class="form-group">
                         <label for="nik">NIK</label>
-                        <input type="text" name="nik" class="form-control" value="{{ old('nik') }}">
+                        <input type="text" name="nik" class="form-control" value="{{ old('nik') ?? $laboum->nik }}">
                     </div>
                     <div class="form-group">
                         <label for="alamat">Alamat</label>
-                        <input type="text" name="alamat" class="form-control">
+                        <input type="text" name="alamat" class="form-control" value="{{ old('alamat') ?? $laboum->alamat }}">
                     </div>
                     <div class="form-group">
                         <label for="nanohpma">No HP</label>
-                        <input type="text" name="nohp" class="form-control">
+                        <input type="text" name="nohp" class="form-control" value="{{ old('nohp') ?? $laboum->nohp }}">
                     </div>
                     <div class="form-group">
                     <label for="jeniskamar">Jenis Kamar</label></br>
-                    <input type="checkbox" name="jeniskamar" value="Standard Room">
-                    <label for="jeniskamar">Standard Room</label>
+                    <input type="checkbox" name="jeniskamar" value="{{ old('jeniskamar') ?? $laboum->jeniskamar }}">
+                    <label for="jeniskamar"><$laboum->jeniskamar></label>
                     </div>
                     <br>
                     <br>
                     <div class="form-group">
                     <label for="harga">Harga</label></br>
-                    <input type="checkbox" name="harga" value="700000">
+                    <input type="checkbox" name="harga" value="{{ old('harga') ?? $laboum->harga }}">
                     <label for="harga">Rp700.000,00</label>
                     </div>
                     <br>
+                    
                     @error('nama')
                         <div class="-danger">{{ $message }}</div>
                     @enderror
 
-                    <button type="submit" class="btn btn-primary mt-2">Simpan</button>
+                    <button type="submit" class="btn btn-primary mt-2">Update</button>
                 </form>
             </div>
         </div>
     </div>
-</body>
-</html>
+
+@endsection

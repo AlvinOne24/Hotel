@@ -3,11 +3,11 @@
 
 @section("content")
 
-<div class="row pt-4">
+    <div class="row pt-4">
         <div class="col">
-            <h2>Profil Pelanggan {{ $laboum->nama}}</h2>
+            <h2>Profil Pelanggan {{ $laboum->nama }}</h2>
             <div class="d-md-flex justify-content-md-end">
-            <a href="{{ url('laboum')}}" class="btn btn-primary mt-2">kembali</a>
+            <a href="{{ url('laboum')}}" class="btn btn-primary mt-2">Back</a>
             </div>
             <table class="table table-striped table-hover">
                 <tr>

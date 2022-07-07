@@ -81,10 +81,32 @@ class LaboumController extends Controller
         return redirect()->route("laboum.create");
     }
 
+    public function edit(Laboum $laboum)
+    {
+        return view("laboum.edit", ['laboum' => $laboum]);
+    }
+
+    public function update(Request $request, Laboum $laboum)
+    {
+        $validateData = $request->validate(
+            ['nama' => 'required', 
+            'nik' => 'required',
+            'alamat' => 'required',
+            'nohp' => 'required',
+            'jeniskamar' => 'required',
+            'harga' => 'required']
+        );
+
+        Laboum::where('id', $laboum->id)->update($validateData);
+        $request->session()->flash("info","Data $laboum->nama berhasil diubah!");
+        return redirect()->route("laboum.index");
+    }
+
     public function destroy(Laboum $laboum)
     {
         $laboum->delete();
         return redirect()->route('laboum.index')
             ->with('info', "Data $laboum->nama berhasil dihapus.");
     }
+
 }
