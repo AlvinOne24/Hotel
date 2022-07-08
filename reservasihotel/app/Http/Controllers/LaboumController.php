@@ -109,4 +109,7 @@ class LaboumController extends Controller
             ->with('info', "Data $laboum->nama berhasil dihapus.");
     }
 
+    public function login(){
+        return view("laboum.login");
+    }
 }

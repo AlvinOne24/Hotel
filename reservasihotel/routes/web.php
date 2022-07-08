@@ -35,3 +35,6 @@ Route::delete('/laboum/{laboum}', [LaboumController::class, 'destroy'])->name('l
 
 Route::get("/info", [LaboumController::class, "info"])->name("laboum.info");
 Route::get("/welcome", [LaboumController::class, "welcome"])->name("laboum.welcome");
+
+Route::get("/login", [LaboumController::class, "login"])->name("laboum.login");
+Route::post("/login", [LaboumController::class, "welcome"])->name("laboum.login");
