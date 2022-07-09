@@ -103,7 +103,7 @@ body{
                         <div class="-danger">{{ $message }}</div>
                     @enderror
 
-                    <button type="submit" class="btn btn-primary mt-2">Check Out</button>
+                    <button type="submit" class="btn btn-primary mt-2">Update</button>
                 </form>
             </div>
         </div>

@@ -38,6 +38,10 @@
                     <td>Harga kamar Pelanggan</td>
                     <td>{{ $laboum->harga }}</td>
                 </tr>
+                <tr>
+                    <td>Status</td>
+                    <td>{{ $laboum->status }}</td>
+                </tr>
             </table>
         </div>
     </div>

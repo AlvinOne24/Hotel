@@ -29,7 +29,7 @@ body{
 <body>
 <nav>
         <ul>
-            <a href="#"><li>Customer List</li></a>
+            <a href="/customer"><li>Customer List</li></a>
         </ul>
     </nav>
 <div class="container">
@@ -41,7 +41,7 @@ body{
                         {{ session()->get('info') }}
                     </div>
                 @endif
-                <form action="{{ route('laboum.update1', ['laboum' => $laboum->id]) }}" method="post">
+                <form action="{{ route('laboum.update', ['laboum' => $laboum->id]) }}" method="post">
                     @method('PATCH')
                     @csrf
                     <div class="form-group">

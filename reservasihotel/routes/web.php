@@ -27,7 +27,6 @@ Route::get('/laboum/{laboum}', [LaboumController::class, "show"])->name("laboum.
 Route::get('/laboum/{laboum}/edit', [LaboumController::class, 'edit'])->name('laboum.edit');
 Route::get('/laboum/{laboum}/out', [LaboumController::class, 'out'])->name('laboum.out');
 Route::patch('/laboum/{laboum}', [LaboumController::class, 'update'])->name('laboum.update');
-Route::patch('/laboum/{laboum}', [LaboumController::class, 'update1'])->name('laboum.update1');
 Route::delete('/laboum/{laboum}', [LaboumController::class, 'destroy'])->name('laboum.destroy');
 
 Route::get("/info", [LaboumController::class, "info"])->name("laboum.info");

@@ -82,14 +82,14 @@ class LaboumController extends Controller
             'nik' => 'required',
             'alamat' => 'required',
             'nohp' => 'required',
-            'jeniskamar' => 'required',
-            'harga' => 'required',
+            'jeniskamar',
+            'harga',
             'status' => 'required']
         );
 
         Laboum::where('id', $laboum->id)->update($validateData);
         $request->session()->flash("info","Data $laboum->nama berhasil diubah!");
-        return redirect()->route("laboum.edit");
+        return redirect()->route("laboum.index");
     }
 
     public function update1(Request $request, Laboum $laboum)
