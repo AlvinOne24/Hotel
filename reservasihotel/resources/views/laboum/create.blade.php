@@ -37,8 +37,7 @@ body{
         <ul>
             <a href="/welcome"><li>Home</li></a>
             <a href="/info"><li>Get Room</li></a>
-            <a href="#"><li>Contact Us</li></a>
-            <a href="#"><li>Rate</li></a>
+            <a href="/customer"><li>List Customer</li></a>
         </ul>
     </nav>
 <div class="container">
@@ -69,17 +68,43 @@ body{
                         <input type="text" name="nohp" class="form-control">
                     </div>
                     <div class="form-group">
-                    <label for="jeniskamar">Jenis Kamar</label></br>
-                    <input type="checkbox" name="jeniskamar" value="Standard Room">
-                    <label for="jeniskamar">Standard Room</label>
+                        <label for="jeniskamar">Jenis Kamar</label>
+                        <br>
+                        <select name="jeniskamar" id="jeniskamar" class="form-group">
+                        <option value="" selected disable> --Room--</option>
+                        <option value="Standard Room">1. Standard Room</option>
+                        <option value="Superior Room">2. Superior Room</option>
+                        <option value="Deluxe Room">3. Deluxe Room</option>
+                        <option value="Junior Suite Room">4. Junior Suite Room</option>
+                        <option value="Suite Room">5. Suite Room</option>
+                        <option value="Presidential Room">6. Presidential Room</option>
+                        </select>
                     </div>
                     <br>
                     <br>
                     <div class="form-group">
-                    <label for="harga">Harga</label></br>
-                    <input type="checkbox" name="harga" value="700000">
-                    <label for="harga">Rp700.000,00</label>
+                        <label for="harga">Price</label>
+                        <br>
+                        <select name="harga" id="harga" class="form-group">
+                        <option value="" selected disable> --Price Room--</option>
+                        <option value="700000">1. Standard Room--------Rp700.000,00</option>
+                        <option value="1000000">2. Superior Room--------Rp1.000.000,00</option>
+                        <option value="1300000">3. Deluxe Room----------Rp1.300.000,00</option>
+                        <option value="1500000">4. Junior Suite Room-----Rp1.500.000,00</option>
+                        <option value="1700000">5. Suite Room------------Rp1.700.000,00</option>
+                        <option value="2000000">6. Presidential Room-----Rp2.000.000,00</option>
+                        </select>
                     </div>
+                    <br>
+                    <div class="form-group"> 
+                        <label for="status">Status</label>
+                        <br>
+                        <select name="status" id="status" class="form-group">
+                        <option value="Progres"> Progress</option>
+                        <option value="Clear">Clear</option>
+                        </select>
+                    </div>
+                    
                     <br>
                     @error('nama')
                         <div class="-danger">{{ $message }}</div>

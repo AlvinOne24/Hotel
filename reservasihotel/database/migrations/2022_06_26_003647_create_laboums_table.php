@@ -21,6 +21,7 @@ class CreateLaboumsTable extends Migration
             $table->string("nohp");
             $table->string("jeniskamar");
             $table->integer("harga");
+            $table->string("status");
             $table->timestamps();
         });
     }

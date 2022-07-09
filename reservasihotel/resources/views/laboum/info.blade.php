@@ -85,9 +85,6 @@ nav ul a:hover{
     <nav>
         <ul>
             <a href="/welcome"><li>Home</li></a>
-            <a href="/info"><li>Get Room</li></a>
-            <a href="#"><li>Contact Us</li></a>
-            <a href="#"><li>Rate</li></a>
         </ul>
     </nav>
     <section class="items">
@@ -99,27 +96,27 @@ nav ul a:hover{
         <div class="item">
         <img src="/images/sp.jpg" alt="Cover image">
             <h4>Superior Room</h4>
-            <button><a href="/laboum/create2" class="button">Order</a></button>
+            <button><a href="/laboum/create" class="button">Order</a></button>
         </div>
         <div class="item">
         <img src="/images/dx.jpg" alt="Cover image">
             <h4>Deluxe Room</h4>
-            <button><a href="/laboum/create3">Order</a></button>
+            <button><a href="/laboum/create">Order</a></button>
         </div>
         <div class="item">
         <img src="/images/junior.jpg" alt="Cover image">
             <h4>Junior Suite Room</h4>
-            <button><a href="/laboum/create4">Order</a></button>
+            <button><a href="/laboum/create">Order</a></button>
         </div>
         <div class="item">
         <img src="/images/suite.jpg" alt="Cover image">
             <h4>Suite Room</h4>
-            <button><a href="/laboum/create5">Order</a></button>
+            <button><a href="/laboum/create">Order</a></button>
         </div>
         <div class="item">
         <img src="/images/pres.jpg" alt="Cover image">
             <h4>Presidential Suite</h4>
-            <button><a href="/laboum/create6">Order</a></button>
+            <button><a href="/laboum/create">Order</a></button>
         </div>
     </section>
 </body>

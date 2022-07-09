@@ -147,9 +147,8 @@ header input:hover{
             <ul class="flex">
                 <li><a href="/welcome">Home</a></li>
                 <li><a href="/info">Get Room</a></li>
-                <li><a href="#">Contact Us</a></li>
-                <li><a href="#">Rate</a></li>
-                <li><a href="/laboum">Admin</a></li>
+                <li><a href="/customer">Customer List</a></li>
+                <li><a href="laboum">Edit</a></li>
             </ul>
         </header>
         <div class="content flex">

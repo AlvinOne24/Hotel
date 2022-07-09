@@ -34,24 +34,6 @@ class LaboumController extends Controller
         return view("laboum.create");
     }
 
-    public function create2(){
-        return view("laboum.create2");
-    }
-
-    public function create3(){
-        return view("laboum.create3");
-    }
-
-    public function create4(){
-        return view("laboum.create4");
-    }
-    public function create5(){
-        return view("laboum.create5");
-    }
-    public function create6(){
-        return view("laboum.create6");
-    }
-
     public function store(Request $request)
     {
         // dump($request);
@@ -62,7 +44,8 @@ class LaboumController extends Controller
             'alamat' => 'required',
             'nohp' => 'required',
             'jeniskamar' => 'required',
-            'harga' => 'required']
+            'harga' => 'required',
+            'status' => 'required']
         );
         
         // dump($validateData);
@@ -75,6 +58,7 @@ class LaboumController extends Controller
         $laboum->nohp = $validateData['nohp'];
         $laboum->jeniskamar = $validateData['jeniskamar'];
         $laboum->harga = $validateData['harga'];
+        $laboum->status = $validateData['status'];
         $laboum->save();
 
         $request->session()->flash("info","Data Pelanggan $laboum->nama berhasil disimpan");
@@ -85,6 +69,11 @@ class LaboumController extends Controller
     {
         return view("laboum.edit", ['laboum' => $laboum]);
     }
+    
+    public function out(Laboum $laboum)
+    {
+        return view("laboum.out", ['laboum' => $laboum]);
+    }
 
     public function update(Request $request, Laboum $laboum)
     {
@@ -94,13 +83,28 @@ class LaboumController extends Controller
             'alamat' => 'required',
             'nohp' => 'required',
             'jeniskamar' => 'required',
-            'harga' => 'required']
+            'harga' => 'required',
+            'status' => 'required']
         );
 
         Laboum::where('id', $laboum->id)->update($validateData);
         $request->session()->flash("info","Data $laboum->nama berhasil diubah!");
-        return redirect()->route("laboum.index");
+        return redirect()->route("laboum.edit");
     }
+
+    public function update1(Request $request, Laboum $laboum)
+    {
+        $validateData = $request->validate(
+            ['status' => 'required']
+        );
+
+        Laboum::where('id', $laboum->id)->update($validateData);
+        $request->session()->flash("info","Data $laboum->nama berhasil diubah!");
+        return redirect()->route("laboum.customer");
+    }
+
+
+    
 
     public function destroy(Laboum $laboum)
     {
@@ -111,5 +115,11 @@ class LaboumController extends Controller
 
     public function login(){
         return view("laboum.login");
+    }
+    
+    public function customer()
+    {
+        $laboums = Laboum::all();
+        return view("laboum.customer")->with('laboums', $laboums);
     }
 }

@@ -1,5 +1,5 @@
 @extends('layout.master')
-@section("title","Halaman Edit Customer");
+@section("title","Halaman List Customer");
 
 @section("content")
 <style>
@@ -34,7 +34,7 @@ body{
     </nav>
 <div class="row pt-4">
         <div class="col">
-            <h2>Edit Customer</h2>
+            <h2>List Customer</h2>
             
             @if (session()->has('info'))
                     <div class="alert alert-success">
@@ -49,20 +49,21 @@ body{
                 <thead>
                     <tr>
                         <th>Nama</th>
-                        <th >Edit</th>
+                        <th>Check out/Check In</th>
+                        <th >Status</th>
+                        <th>Check Out</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($laboums as $item)
                         <tr>
                             <td>{{ $item->nama }}</td>
+                            
+                            <td>{{ $item->updated_at }}</td>
+                            <td>{{ $item->status }}</td>
                             <td>
                                 <form action="{{ route('laboum.destroy', ['laboum' => $item->id]) }}" method="POST">
-                                    <a href="{{ url('/laboum/'.$item->id) }}" class="btn btn-warning">Detail</a>
-                                    <a href="{{ url('/laboum/'.$item->id.'/edit') }}" class="btn btn-info">Update</a>
-                                    @method('DELETE')
-                                    @csrf
-                                    <button type="submit" class="btn btn-danger" >Delete</button>
+                                <a href="{{ url('/laboum/'.$item->id.'/out') }}" class="btn btn-info">Check Out</a>
                                 </form>
                             </td>
                         </tr>
